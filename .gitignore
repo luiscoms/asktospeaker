@@ -26,3 +26,13 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
+
+# intelxdk files
+/intelxdk.config.android.xml
+/intelxdk.config.crosswalk.xml
+/intelxdk.config.ios.xml
+/intelxdk.config.windows8.xml
+
+# Temp files
+Thumbs.db
+.DS_Store

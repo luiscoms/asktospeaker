@@ -1,0 +1,11 @@
+{
+  "name": "asktospeaker",
+  "version": "0.0.0",
+  "description": "Simple application to post questions",
+  "main": "www/index.html",
+  "scripts": {
+  	"start": "http-server -a localhost -p 7777 www/"
+  },
+  "author": "LuisComS <dev@luiscoms.com.br>",
+  "license": "MIT"
+}
