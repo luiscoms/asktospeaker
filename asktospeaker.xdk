@@ -6,7 +6,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "https://edge-intel.s3.amazonaws.com/jsapp/production/release-2014-ww45/template-list-view-appdesigner/sample.zip",
       "projectGuid": "73a5074b-5a38-4ec0-b0e6-e01513002fe6",
-      "lastModifiedDate": 1415705801886,
+      "lastModifiedDate": 1416802521705,
       "creationDate": 1415705801846
     },
     "XDK-app-designer": "true",
@@ -30,7 +30,78 @@
         }
       }
     ],
-    "serviceMethods": [],
+    "serviceMethods": [
+      {
+        "methodName": "nerdyjokes",
+        "serviceName": "sandbox",
+        "resultType": "object",
+        "selectedPaths": {
+          ".value[0].joke": "string"
+        },
+        "cachedResult": {
+          "type": "success",
+          "value": [
+            {
+              "id": 520,
+              "joke": "With Chuck Norris P = NP. There's no nondeterminism with Chuck Norris decisions.",
+              "categories": [
+                "nerdy"
+              ]
+            },
+            {
+              "id": 457,
+              "joke": "MySpace actually isn't your space, it's Chuck's (he just lets you use it).",
+              "categories": [
+                "nerdy"
+              ]
+            },
+            {
+              "id": 495,
+              "joke": "Chuck Norris doesn't needs try-catch, exceptions are too afraid to raise.",
+              "categories": [
+                "nerdy"
+              ]
+            }
+          ]
+        },
+        "codeGenerationParams": {
+          "apiName": "sandbox",
+          "endpointName": "Methods",
+          "methodName": "GET",
+          "namespace": "intel.xdk.services."
+        },
+        "parameters": {
+          "URL": "http://api.icndb.com/jokes/random/3?limitTo=[nerdy]"
+        },
+      },
+      {
+        "methodName": "events",
+        "serviceName": "sandbox",
+        "resultType": "array",
+        "selectedPaths": {
+          "[0].name": "string"
+        },
+        "cachedResult": [
+          {
+            "_id": "5472ac6c9f546ab8c7c5835a",
+            "name": "BrazilJS"
+          },
+          {
+            "_id": "5472ac789f546ab8c7c5835b",
+            "name": "Front in POA"
+          }
+        ],
+        "codeGenerationParams": {
+          "apiName": "sandbox",
+          "endpointName": "Methods",
+          "methodName": "GET",
+          "namespace": "intel.xdk.services."
+        },
+        "parameters": {
+          "URL": "http://localhost:3000/events"
+        },
+      }
+    ],
     "cordovaPluginsDirectory": "plugins",
     "cordovaPlugins": [
       {

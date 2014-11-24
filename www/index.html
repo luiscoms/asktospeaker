@@ -61,9 +61,18 @@
         <script type="application/javascript" src="js/index_user_scripts.js"></script>
         <script type="application/javascript" src="app_framework/pageChangeRepeater.js"></script>
         <script type="application/javascript" src="xdk/ad/af_subpage.js"></script>
+        <script type="application/javascript" src="lib/jquery.min.js"></script>
+        <script type="application/javascript" src="lib/angular.min.js"></script>
+        <script type="application/javascript" src="xdk/ad/angular_support.js"></script>
+        <script type="application/javascript" src="xdk/ad/jquery.ba-throttle-debounce.min.js"></script>
+        <script type="application/javascript" src="xdk/services/service-credentials.js"></script>
+        <script type="application/javascript" src="xdk/services/service-methods.js"></script>
+        <script type="application/javascript" src="xdk/ad/ad_events_data.js"></script>
+        <script type="application/javascript" src="js/index_init_services.js"></script>
+        <script type="application/javascript" src="xdk/ad/index_setup_services.js"></script>
     </head>
 
-    <body id="afui">
+    <body id="afui" ng-app="myApp">
 
         <!-- IMPORTANT: Do not include your weinre script tag as part of your release builds! -->
         <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work above -->
@@ -72,7 +81,7 @@
         <div class="uwrap" id="content">
             <div class="upage panel" id="mainpage" data-header="af-header-0" data-footer="none">
                 <div class="upage-outer">
-                    <header class="container-group inner-element uib_w_1" data-uib="app_framework/header" data-ver="1" id="af-header-0">
+                    <header class="container-group inner-element uib_w_1" data-uib="app_framework/header" data-ver="1" id="af-header-0" data-sm="-- .uib_w_3" data-sc="single" ng-controller="angular_controllers.af_header-0.controller" data-rpath="(base)">
                         <h1>Events</h1>
                         <div class="widget-container wrapping-col single-centered"></div>
                         <div class="widget-container content-area horiz-area wrapping-col left with-back"><a class="button backButton">Back</a>
@@ -85,14 +94,9 @@
                             <div class="col uib_col_1 col-0_12-12" data-uib="layout/col" data-ver="0">
                                 <div class="widget-container content-area vertical-col">
 
-                                    <ul class="list widget uib_w_2 d-margins" data-uib="app_framework/listview" data-ver="1">
-                                        <li class="widget uib_w_3" data-uib="app_framework/listitem" data-ver="1"><a href="#event_talks">BrazilJS</a>
-                                        </li>
-
-                                        <li class="widget uib_w_5" data-uib="app_framework/listitem" data-ver="1"><a href="#event_talks">Front in POA</a>
-                                        </li>
-
-                                        <li class="widget uib_w_7" data-uib="app_framework/listitem" data-ver="1"><a href="#event_talks">FISL</a>
+                                    <ul class="list widget uib_w_2 d-margins" data-uib="app_framework/listview" data-ver="1" ng-controller="angular_controllers.uib_w_3.controller">
+                                        <li class="widget uib_w_3" data-uib="app_framework/listitem" data-ver="1" data-sm="events" ng-repeat="entry in entries" ng-click="select_entry($event, entry)" data-adidx="{{$index}}" data-rpath="[]">
+                                            <a href="#event_talks">{{entry.name}}</a>
                                         </li>
 
                                     </ul><span class="uib_shim"></span>
