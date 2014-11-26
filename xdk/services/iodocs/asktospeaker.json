@@ -1,0 +1,86 @@
+{
+    "endpoints": [
+        {
+            "name": "Events",
+            "dashboardUrl": "http://localhost:3000/",
+            "methods": [
+                {
+                    "MethodName": "events",
+                    "Synopsis": "Grabs information from the all events"
+                },
+                {
+                    "MethodName": "eventbyid",
+                    "Synopsis": "Grabs information from specific event",
+                    "parameters": [
+                        {
+                            "Name": "id",
+                            "Required": "Y",
+                            "Default": "",
+                            "Type": "string"
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "talks",
+                    "Synopsis": "Grabs information from talks",
+                    "parameters": [
+                        {
+                            "Name": "eventId",
+                            "Required": "Y",
+                            "Default": "",
+                            "Type": "string"
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "questions",
+                    "Synopsis": "Grabs information from questions",
+                    "parameters": [
+                        {
+                            "Name": "eventId",
+                            "Required": "Y",
+                            "Default": "",
+                            "Type": "string"
+                        },
+                        {
+                            "Name": "talkId",
+                            "Required": "Y",
+                            "Default": "",
+                            "Type": "string"
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "newquestion",
+                    "Synopsis": "Post new question",
+                    "parameters": [
+                        {
+                            "Name": "eventId",
+                            "Required": "Y",
+                            "Default": "",
+                            "Type": "string"
+                        },
+                        {
+                            "Name": "talkId",
+                            "Required": "Y",
+                            "Default": "",
+                            "Type": "integer"
+                        },
+                        {
+                            "Name": "who",
+                            "Required": "Y",
+                            "Default": "",
+                            "Type": "string"
+                        },
+                        {
+                            "Name": "question",
+                            "Required": "Y",
+                            "Default": "",
+                            "Type": "string"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

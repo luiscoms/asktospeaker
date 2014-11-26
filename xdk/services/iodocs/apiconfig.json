@@ -1,0 +1,18 @@
+{
+  "asktospeaker": {
+    "name": "Ask to Speaker API",
+    "description": "API to serve events data",
+    "dashboardUrl": "http://localhost:3000",
+    "requiredLibraries": []
+  },
+  "teste": {
+    "name": "Lower Case API",
+    "description": "A great API",
+    "dashboardUrl": "http://developer.example.api",
+    "auth": "key",
+    "requiredLibraries": [
+      "http://example.api/example-api.js"
+    ],
+    "signature": "apiSecret"
+  }
+}

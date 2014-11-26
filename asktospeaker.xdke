@@ -4,9 +4,9 @@
     "projectFiles": {},
     "projectDirectories": {},
     "currentService": {
-      "methodapi": "GET",
-      "endPoint": "Methods",
-      "service": "sandbox"
+      "methodapi": "questions",
+      "endPoint": "Events",
+      "service": "asktospeaker"
     }
   }
 }

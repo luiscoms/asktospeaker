@@ -6,14 +6,29 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "https://edge-intel.s3.amazonaws.com/jsapp/production/release-2014-ww45/template-list-view-appdesigner/sample.zip",
       "projectGuid": "73a5074b-5a38-4ec0-b0e6-e01513002fe6",
-      "lastModifiedDate": 1416802521705,
+      "lastModifiedDate": 1417020399615,
       "creationDate": 1415705801846
     },
     "XDK-app-designer": "true",
     "sourceDirectory": "www",
     "startFile": "index.html",
     "projectFiles": {},
-    "projectDirectories": {},
+    "projectDirectories": {
+      "www/xdk/services": {
+        "settings": {
+          "project": {
+            "XDK-generated": "true"
+          }
+        }
+      },
+      "xdk/services/iodocs": {
+        "settings": {
+          "project": {
+            "XDK-generated": "true"
+          }
+        }
+      }
+    },
     "libraries": [
       {
         "name": "Cordova",
@@ -73,33 +88,115 @@
         "parameters": {
           "URL": "http://api.icndb.com/jokes/random/3?limitTo=[nerdy]"
         },
+        "requiredLibraries": []
       },
       {
-        "methodName": "events",
-        "serviceName": "sandbox",
+        "methodName": "asktospeakerevents",
+        "serviceName": "asktospeaker",
         "resultType": "array",
         "selectedPaths": {
-          "[0].name": "string"
+          "[0].eventId": "number",
+          "[0].name": "string",
+          "[0].when": "string",
+          "[0].location": "string"
         },
         "cachedResult": [
           {
-            "_id": "5472ac6c9f546ab8c7c5835a",
-            "name": "BrazilJS"
+            "_id": "5473d8bac0576b065b715d3a",
+            "eventId": 1,
+            "name": "BrazilJS",
+            "when": "August 21-22 2014",
+            "location": "Porto Alegre / RS"
           },
           {
-            "_id": "5472ac789f546ab8c7c5835b",
-            "name": "Front in POA"
+            "_id": "5473d8bac0576b065b715d3b",
+            "eventId": 2,
+            "name": "Front in POA",
+            "when": "November 8 2014",
+            "location": "Porto Alegre / RS"
           }
         ],
         "codeGenerationParams": {
-          "apiName": "sandbox",
-          "endpointName": "Methods",
-          "methodName": "GET",
+          "apiName": "asktospeaker",
+          "endpointName": "Events",
+          "methodName": "events",
+          "namespace": "intel.xdk.services."
+        },
+        "parameters": {},
+        "requiredLibraries": [
+          "xhr.js",
+          "xdk/services/service-credentials.js",
+          "xdk/services/service-methods.js"
+        ]
+      },
+      {
+        "methodName": "asktospeakertalks",
+        "serviceName": "asktospeaker",
+        "resultType": "array",
+        "selectedPaths": {
+          "[0].talkId": "number",
+          "[0].eventId": "number",
+          "[0].speaker": "string",
+          "[0].title": "string"
+        },
+        "cachedResult": [
+          {
+            "_id": "54753351cccb6292dc895c61",
+            "talkId": 4,
+            "eventId": 2,
+            "speaker": "Vinícius Almeida",
+            "title": "Repensando o uso do jQuery"
+          },
+          {
+            "_id": "54753351cccb6292dc895c62",
+            "talkId": 5,
+            "eventId": 2,
+            "speaker": "Davidson Fellipe",
+            "title": "O melhor da monitoração de Web Performance"
+          }
+        ],
+        "codeGenerationParams": {
+          "apiName": "asktospeaker",
+          "endpointName": "Events",
+          "methodName": "talks",
           "namespace": "intel.xdk.services."
         },
         "parameters": {
-          "URL": "http://localhost:3000/events"
+          "eventId": "2"
         },
+        "requiredLibraries": [
+          "xhr.js",
+          "xdk/services/service-credentials.js",
+          "xdk/services/service-methods.js"
+        ]
+      },
+      {
+        "methodName": "asktospeakernewquestion",
+        "serviceName": "asktospeaker",
+        "resultType": "object",
+        "selectedPaths": {
+          ".msg": "string"
+        },
+        "cachedResult": {
+          "msg": ""
+        },
+        "codeGenerationParams": {
+          "apiName": "asktospeaker",
+          "endpointName": "Events",
+          "methodName": "newquestion",
+          "namespace": "intel.xdk.services."
+        },
+        "parameters": {
+          "eventId": "0",
+          "talkId": "0",
+          "who": "0",
+          "question": "0"
+        },
+        "requiredLibraries": [
+          "xhr.js",
+          "xdk/services/service-credentials.js",
+          "xdk/services/service-methods.js"
+        ]
       }
     ],
     "cordovaPluginsDirectory": "plugins",
