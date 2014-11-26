@@ -10,4 +10,4 @@ angular.module("myApp", []);
 data_support.ready(intel.xdk.services.asktospeakerevents.bind(null, {"xdkFilter":null}));
 data_support.ready(intel.xdk.services.asktospeakertalks.bind(null, {"xdkFilter":null}));
 data_support.ready(intel.xdk.services.asktospeakerquestions.bind(null, {"talkId":"0","xdkFilter":null}));
-data_support.ready(intel.xdk.services.asktospeakernewquestion.bind(null, {"eventId":"0","talkId":"0","who":"0","question":"0","xdkFilter":null}));
+//data_support.ready(intel.xdk.services.asktospeakernewquestion.bind(null, {"eventId":"0","talkId":"0","who":"0","question":"0","xdkFilter":null}));
