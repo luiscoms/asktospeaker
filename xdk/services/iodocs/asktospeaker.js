@@ -1,24 +1,25 @@
 (function (credentials, helpers) {
-  var exports = {};
+  var exports = {},
+      server = 'http://192.168.43.191';
 
   /* Data Feed Function */
   exports.events = function (params) {
-    var url = 'http://localhost:3000/events';
+    var url = server + '/events';
     return $.ajax({url: url});
   };
 
   exports.eventbyid = function (params) {
-    var url = 'http://localhost:3000/events/' + params.id;
+    var url = server + '/events/' + params.id;
     return $.ajax({url: url});
   };
 
   exports.talks = function (params) {
-    var url = 'http://localhost:3000/events/' + params.eventId + '/talks';
+    var url = server + '/events/' + params.eventId + '/talks';
     return $.ajax({url: url});
   };
 
   exports.questions = function (params) {
-    var url = 'http://localhost:3000/events/' + params.eventId + '/talks/' + params.talkId + '/questions';
+    var url = server + '/events/' + params.eventId + '/talks/' + params.talkId + '/questions';
     return $.ajax({
         url: url,
         type: 'GET'
@@ -26,7 +27,7 @@
   };
 
   exports.newquestion = function (params) {
-    var url = 'http://localhost:3000/events/' + params.eventId + '/talks/' + params.talkId + '/questions',
+    var url = server + '/events/' + params.eventId + '/talks/' + params.talkId + '/questions',
         newQuestion = {
             talkId : params.talkId,
             who : params.who,

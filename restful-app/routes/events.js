@@ -1,6 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
+router.use(function(req, res, next) {  
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+});
+
 router.param(function(name, fn){
   if (fn instanceof RegExp) {
     return function(req, res, next, val){

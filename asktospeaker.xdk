@@ -6,7 +6,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "https://edge-intel.s3.amazonaws.com/jsapp/production/release-2014-ww45/template-list-view-appdesigner/sample.zip",
       "projectGuid": "73a5074b-5a38-4ec0-b0e6-e01513002fe6",
-      "lastModifiedDate": 1417020399615,
+      "lastModifiedDate": 1417209564546,
       "creationDate": 1415705801846
     },
     "XDK-app-designer": "true",
@@ -191,6 +191,39 @@
           "talkId": "0",
           "who": "0",
           "question": "0"
+        },
+        "requiredLibraries": [
+          "xhr.js",
+          "xdk/services/service-credentials.js",
+          "xdk/services/service-methods.js"
+        ]
+      },
+      {
+        "methodName": "asktospeakerquestions",
+        "serviceName": "asktospeaker",
+        "resultType": "array",
+        "selectedPaths": {
+          "[0].talkId": "string",
+          "[0].who": "string",
+          "[0].question": "string"
+        },
+        "cachedResult": [
+          {
+            "_id": "5476088c3a1ee9a8cec33296",
+            "talkId": "0",
+            "who": "0",
+            "question": "0"
+          }
+        ],
+        "codeGenerationParams": {
+          "apiName": "asktospeaker",
+          "endpointName": "Events",
+          "methodName": "questions",
+          "namespace": "intel.xdk.services."
+        },
+        "parameters": {
+          "eventId": "0",
+          "talkId": "0"
         },
         "requiredLibraries": [
           "xhr.js",
